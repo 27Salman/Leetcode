@@ -6,11 +6,11 @@ var toLowerCase = function(s) {
     let n = 32;
     let arr = [];
     for(let i = 0; i<s.length;i++){
-        if(s[i]===s[i].toUpperCase()){
+        if((/^A-Za-z/gi) && s[i]===s[i].toLowerCase() ){
+            arr.push(s[i]);
+        }else if(s[i]===s[i].toUpperCase()){
             let str = s.charCodeAt(i) + n;
             arr.push(String.fromCharCode(str));
-        }else{
-            arr.push(s[i]);
         }
     }
     return arr.join('');
