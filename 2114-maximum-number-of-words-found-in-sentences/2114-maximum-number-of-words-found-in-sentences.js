@@ -7,7 +7,7 @@ var mostWordsFound = function(sentences) {
     for(let str of sentences){
         let max = 0;
         for(let str1 of str.split(" ")){
-            max = max+1;
+            max++;
         }
         num.push(max);
     }
