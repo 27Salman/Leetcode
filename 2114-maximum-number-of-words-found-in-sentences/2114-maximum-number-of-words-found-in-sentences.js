@@ -3,13 +3,5 @@
  * @return {number}
  */
 var mostWordsFound = function(sentences) {
-    let num = [];
-    for(let str of sentences){
-        let max = 0;
-        for(let str1 of str.split(" ")){
-            max++;
-        }
-        num.push(max);
-    }
-    return Math.max(...num);
+    return Math.max(...sentences.map(item=>item.split(" ").length))
 };
