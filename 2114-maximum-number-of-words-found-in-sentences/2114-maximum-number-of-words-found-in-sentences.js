@@ -11,7 +11,5 @@ var mostWordsFound = function(sentences) {
         }
         num.push(max);
     }
-    let n = Math.max(...num);
-    console.log(n)
-    return n;
+    return Math.max(...num);
 };
