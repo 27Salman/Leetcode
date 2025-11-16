@@ -3,9 +3,10 @@
  * @return {number}
  */
 var reverseDegree = function (s) {
-    let productSum = 0
-    for (let i = 1; i <= s.length; i++) {
-        productSum+=(123-s.charCodeAt(i-1))*i      
+    let sum = 0;
+    for (let i = 0; i < s.length; i++) {
+        const charValue = 26 - (s.charCodeAt(i) - 97);
+        sum += (charValue * (i + 1));
     }
-    return productSum
+    return sum;
 };
