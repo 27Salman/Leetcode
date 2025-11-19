@@ -3,12 +3,12 @@
  * @return {number}
  */
 var finalValueAfterOperations = function(operations) {
-    let count = 0;
-    for(let num of operations){
-        if(num === "X++" || num === "++X"){
-            count++;
+    const count = operations.reduce((acc,cur)=>{
+        if(cur === "++X" || cur === "X++"){
+            acc++;
         }else{
-            count--;
-        }
-    }return count;
+            acc--;
+        }return acc;
+    },0);
+    return count;
 };
