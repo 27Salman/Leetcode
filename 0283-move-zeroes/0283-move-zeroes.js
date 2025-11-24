@@ -12,5 +12,5 @@ var moveZeroes = function(nums) {
                 nums[j]= temp;
             }
         }
-    }return nums;
+    }
 };
