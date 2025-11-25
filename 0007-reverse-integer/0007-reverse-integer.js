@@ -4,6 +4,7 @@
  */
 var reverse = function(x) {
     let n = Math.abs(x).toString().split('').reverse().join('');
-    if(n>2**31 || n<-(2**31)) return 0;
-    return n*Math.sign(x);
+    let result = n*Math.sign(x);
+    if(result>2**31 || result<-(2**31)) return 0;
+    return result;
 };
