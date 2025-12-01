@@ -8,12 +8,16 @@ var searchRange = function(nums, target) {
     let arr = [];
     let n = nums.length;
     if(!nums.includes(target) || nums.length === 0) return [-1,-1];
-    for(let i = 0; i<=nums.length; i++){
+    for(let i = 0; i<=n; i++){
         if(nums[i]===target){
             arr.push(i);
+            break;
         }
-        if(nums[-n-i]===target){
-            arr.push(-n-i);
+    }
+    for(let j = n-1; j>=0; j--){
+        if(nums[j]===target){
+            arr.push(j);
+            break;
         }
     }return arr;
     // while(i<=nums.length){
