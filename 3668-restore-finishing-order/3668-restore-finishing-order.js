@@ -6,8 +6,10 @@
 var recoverOrder = function(order, friends) {
     let arr = [];
     for(let i = 0; i<order.length; i++){
-        if(friends.includes(order[i])){
-            arr.push(order[i]);
+        for(let j = 0; j<friends.length; j++){
+            if(order[i]===friends[j]){
+                arr.push(order[i]);
+            }
         }
     }return arr;
 };
