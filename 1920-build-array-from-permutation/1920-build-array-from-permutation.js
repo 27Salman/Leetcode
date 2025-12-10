@@ -5,7 +5,6 @@
 var buildArray = function(nums) {
     let ans = [];
     for(let i = 0; i<nums.length;i++){
-        let arr = nums[nums[i]];
-        ans.push(arr); 
+        ans[i] = nums[nums[i]]; 
     }return ans;
 };
