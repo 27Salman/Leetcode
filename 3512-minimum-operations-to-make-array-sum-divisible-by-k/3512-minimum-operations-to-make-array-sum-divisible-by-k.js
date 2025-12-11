@@ -4,11 +4,5 @@
  * @return {number}
  */
 var minOperations = function(nums, k) {
-    const sum = nums.reduce((acc,cur)=>acc+cur,0);
-    if(sum%k===0){
-        return 0;
-    }else if(sum < k){
-        return sum;
-    }
-    return sum%k;
+    return nums.reduce((acc,cur)=>acc+cur,0) % k;
 };
