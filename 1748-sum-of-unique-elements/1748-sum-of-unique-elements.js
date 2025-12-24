@@ -3,5 +3,5 @@
  * @return {number}
  */
 var sumOfUnique = function(nums) {
-    return nums.filter((value)=>nums.indexOf(value)===nums.lastIndexOf(value)).reduce((a,b)=>a+b,0);
+    return nums.filter(val=>nums.indexOf(val)===nums.lastIndexOf(val)).reduce((a,b)=>a+b,0);
 };
