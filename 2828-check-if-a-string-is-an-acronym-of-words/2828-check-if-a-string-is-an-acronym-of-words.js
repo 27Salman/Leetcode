@@ -4,7 +4,7 @@
  * @return {boolean}
  */
 var isAcronym = function(words, s) {
-    let str = ""
+    let str = "";
     for(let i = 0; i<words.length; i++){
         str += words[i][0];
     }
