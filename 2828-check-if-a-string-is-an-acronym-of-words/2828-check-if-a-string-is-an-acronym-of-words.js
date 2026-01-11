@@ -5,8 +5,10 @@
  */
 var isAcronym = function(words, s) {
     let str = "";
-    for(let i = 0; i<words.length; i++){
+    let i = 0;
+    while(i<words.length){
         str += words[i][0];
+        i++;
     }
     return (str === s);
 };
