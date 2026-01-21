@@ -4,12 +4,14 @@
  * @return {number}
  */
 var prefixCount = function(words, pref) {
-    let count = 0;
-    for(let str of words){
-        if(str.startsWith(pref)) count++;
-    }
-    return count;
+    // let count = 0;
+    // for(let str of words){
+    //     if(str.startsWith(pref)) count++;
+    // }
+    // return count;
 
+    //....One line code....
+    return words.filter(word => word.startsWith(pref)).length;
 
     // ....Beginner code....
     // let count = 0;
