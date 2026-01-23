@@ -8,17 +8,9 @@ var digitCount = function(num){
         acc[cur] = (acc[cur]||0)+1;
         return acc;
     },{});
-    let flag = false;
     for(let i = 0; i<nums.length; i++){
-        for(let str in freq){
-            console.log(str)
-            if(i!==freq[str]){
-                flag = true;
-                continue;
-            }else{
-                flag = false;
-                break;
-            }
+        if(Number(nums[i]) !== (freq[i]||0)){
+            return false;
         }
-    }return flag
+    }return true;
 };
