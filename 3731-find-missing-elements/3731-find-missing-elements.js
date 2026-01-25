@@ -3,11 +3,12 @@
  * @return {number[]}
  */
 var findMissingElements = function(nums) {
+    let set = new Set(nums);
     let max = Math.max(...nums);
     let min = Math.min(...nums);
     let arr = [];
     while(min<max){
-        if(!nums.includes(min)){
+        if(!set.has(min)){
             arr.push(min);
         }
         min++;
