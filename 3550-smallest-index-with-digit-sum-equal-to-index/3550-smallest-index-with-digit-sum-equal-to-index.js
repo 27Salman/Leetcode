@@ -7,8 +7,8 @@ var smallestIndex = function(nums) {
     for(let i = 0; i<nums.length; i++){
         let n = nums[i].toString().split("").reduce((acc,cur)=> acc+Number(cur), 0);
         if(Number(n) === i){
-            min = Math.min(0,i);
+            return i;
         }
-    };
-    return min;
+    }
+    return -1;
 };
