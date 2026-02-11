@@ -3,5 +3,5 @@
  * @return {number}
  */
 var minimizedStringLength = function(s) {
-    return new Set(s).size;
+    return s.split("").filter((a,index)=>s.indexOf(a)===index).length;
 };
