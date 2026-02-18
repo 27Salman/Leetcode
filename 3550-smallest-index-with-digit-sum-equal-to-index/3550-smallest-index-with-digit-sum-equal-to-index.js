@@ -3,9 +3,11 @@
  * @return {number}
  */
 var smallestIndex = function(nums) {
+    let min = Infinity;
     for(let i = 0; i<nums.length; i++){
-        let n = nums[i].toString().split("").reduce((acc,cur)=> acc+Number(cur), 0);
-        if(n === i) return i;
-    }
-    return -1;
+        let n = nums[i].toString().split("").reduce((acc,cur)=>acc+Number(cur),0);
+        if(n===i){
+            return i;
+        }
+    }return -1;
 };
