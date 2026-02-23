@@ -3,14 +3,9 @@
  * @return {boolean}
  */
 var isBalanced = function(num) {
-    let evenSum = 0;
-    let oddSum = 0;
+    let sum = 0;
     for(let i  = 0; i<num.length; i++){
-        if(i%2===0){
-            evenSum += Number(num[i]);
-        }else{
-            oddSum += Number(num[i]);
-        }
+        sum += ( i % 2 === 0 ) ? +num[i] : -num[i];
     }
-    return evenSum === oddSum ? true:false;
+    return sum === 0;
 };
