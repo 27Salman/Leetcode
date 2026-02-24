@@ -9,16 +9,8 @@ var findThePrefixCommonArray = function(A, B) {
     let result = Array(n).fill(0);
     let count = 0;
     for(let i = 0; i<n; i++){
-        if(common.has(A[i])){
-            count++;
-        }else{
-            common.add(A[i]);
-        }
-        if(common.has(B[i])){
-            count++;
-        }else{
-            common.add(B[i]);
-        }
+        common.has(A[i]) ? count++ : common.add(A[i]);
+        common.has(B[i]) ? count++ : common.add(B[i]);
         result[i] = count;
     }return result;
 };
