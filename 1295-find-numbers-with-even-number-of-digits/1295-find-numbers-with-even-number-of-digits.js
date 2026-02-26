@@ -3,9 +3,8 @@
  * @return {number}
  */
 var findNumbers = function(nums) {
-    let count = 0;
-    for(num of nums){
-        let n = num.toString().split("").length;
-        if(n%2===0) count++;
-    }return count;
-};
+    return nums.filter((a)=>{
+        let n = a.toString().split("").length;
+        return (n%2===0)
+        }).length;
+}
