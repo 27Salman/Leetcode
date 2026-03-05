@@ -3,11 +3,11 @@
  * @return {boolean}
  */
 var uniqueOccurrences = function(arr) {
-    let freq = arr.reduce((acc,cur)=>{
-        acc[cur] = (acc[cur]||0)+1;
-        return acc;
-    },{});
-    let n = Object.values(freq);
-    let num = new Set(n);
-    return n.length === num.size;  
+    const counts = new Map();
+    for (const num of arr) {
+        counts.set(num, (counts.get(num) || 0) + 1);
+    }    
+    const frequencies = Array.from(counts.values());
+    const uniqueFrequencies = new Set(frequencies);
+    return frequencies.length === uniqueFrequencies.size;
 };
