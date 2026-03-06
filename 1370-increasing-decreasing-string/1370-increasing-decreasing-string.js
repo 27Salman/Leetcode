@@ -4,7 +4,7 @@
  */
 var sortString = function(s) {
     let str = [];
-    let sort = s.split("").sort((a,b)=>a.charCodeAt(0)-b.charCodeAt(0));
+    let sort = s.split("").sort();
     let freq = sort.reduce((acc,cur)=> {
         acc[cur] = (acc[cur]||0)+1;
         return acc;
