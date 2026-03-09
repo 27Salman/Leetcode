@@ -5,9 +5,9 @@
  */
 var maximizeSum = function(nums, k) {
     let sum = 0;
-    let n = nums.length - 1;
+    let num = nums.sort((a,b)=>b-a);
     for(let i = 0; i<k; i++){
-        sum += nums[n];
-        nums[n] = nums[n]+1;
+        sum += num[0];
+        num[0] = num[0]+1;
     }return sum;
 };
