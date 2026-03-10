@@ -4,8 +4,6 @@
  * @return {string[]}
  */
 var uncommonFromSentences = function(s1, s2) {
-    let word1 = s1.split(" ");
-    let word2 = s2.split(" ");
-    let arr = [...word1,...word2];
+    let arr = [...s1.split(" "),...s2.split(" ")];
     return arr.filter(a=>arr.indexOf(a)===arr.lastIndexOf(a));
 };
