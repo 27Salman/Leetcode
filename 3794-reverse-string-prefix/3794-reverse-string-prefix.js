@@ -4,6 +4,5 @@
  * @return {string}
  */
 var reversePrefix = function(s, k) {
-    if(k===1) return s;
-    return s.slice(0,k).split("").reverse().join("")+s.slice(k);
+    return k!==1 ? s.slice(0,k).split("").reverse().join("")+s.slice(k):s;
 };
