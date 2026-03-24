@@ -3,5 +3,13 @@
  * @return {number}
  */
 var maxDistinct = function(s) {
-    return new Set(s).size;
+    let count=0;
+    let arr=[];
+    for(const char of s){
+        if(!arr.includes(char)){
+            arr.push(char);
+            count++;
+        }
+    }
+    return count;
 };
