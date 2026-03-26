@@ -7,9 +7,8 @@ var minPairSum = function(nums) {
     let left = 0, right = nums.length-1;
     let value = 0;
     while(left<=right){
-        let a = nums[left]+nums[right];
+        value = Math.max(value, nums[left] + nums[right])
         left++;
         right--;
-        if(a>value) value = a;
     }return value;
 }
