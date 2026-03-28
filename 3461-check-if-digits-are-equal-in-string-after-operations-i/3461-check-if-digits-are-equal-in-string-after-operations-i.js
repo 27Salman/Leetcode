@@ -3,7 +3,7 @@
  * @return {boolean}
  */
 var hasSameDigits = function(s) {
-    while(3 <= s.length){
+    while(2 < s.length){
          let str = "";
         for(let i = 1; i<s.length; i++){
             str += (Number(s[i])+Number(s[i-1]))%10;
