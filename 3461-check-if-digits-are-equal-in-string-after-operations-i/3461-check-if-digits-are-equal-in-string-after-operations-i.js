@@ -9,5 +9,5 @@ var hasSameDigits = function(s) {
             str += (Number(s[i])+Number(s[i-1]))%10;
         }
         s = str;
-    }return s[0]==s[1] ? true : false;
+    }return s[0] === s[1]
 };
