@@ -10,9 +10,7 @@ var equalFrequency = function(word) {
             freq[word[j]] = (freq[word[j]] || 0 ) + 1;
         }
         let result = Object.values(freq);
-        let value = result[0];
-        
-        let equal = result.every(val => val === value);
+        let equal = result.every(val => val === result[0]);
         if(equal) return true;
     }
     return false
