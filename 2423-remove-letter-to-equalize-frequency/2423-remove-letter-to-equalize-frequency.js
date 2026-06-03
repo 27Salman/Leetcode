@@ -3,15 +3,39 @@
  * @return {boolean}
  */
 var equalFrequency = function(word) {
-    for(let i = 0; i<word.length; i++){
-        let freq = {};
-        for(let j = 0; j<word.length; j++){
-            if(i === j) continue;
-            freq[word[j]] = (freq[word[j]] || 0 ) + 1;
-        }
-        let result = Object.values(freq);
-        let equal = result.every(val => val === result[0]);
-        if(equal) return true;
+
+    const freq = new Array(26).fill(0);
+
+    for(const ch of word){
+        freq[ch.charCodeAt(0) - 97]++;
     }
-    return false
+
+    for(let i = 0; i < 26; i++){
+
+        if(freq[i] === 0) continue;
+
+        freq[i]--;
+
+        let target = 0;
+        let valid = true;
+
+        for(let j = 0; j < 26; j++){
+
+            if(freq[j] === 0) continue;
+
+            if(target === 0){
+                target = freq[j];
+            }
+            else if(freq[j] !== target){
+                valid = false;
+                break;
+            }
+        }
+
+        freq[i]++;
+
+        if(valid) return true;
+    }
+
+    return false;
 };
