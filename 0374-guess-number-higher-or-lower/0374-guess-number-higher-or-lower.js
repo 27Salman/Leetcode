@@ -12,17 +12,17 @@
  * @return {number}
  */
 var guessNumber = function(n) {
-    let l = 1;
-    let r = n;
-    while(l <= r){
-        let mid = Math.floor(l + (r-l)/2);
+    let left = 1;
+    let right = n;
+    while(left <= right){
+        let mid = Math.floor(left + (right-left)/2);
         let result = guess(mid);
         if(result === 0){
             return mid;
         }else if(result === -1){
-            r = mid - 1;
+            right = mid - 1;
         }else{
-            l = mid + 1;
+            left = mid + 1;
         }
     }
 };
