@@ -12,7 +12,7 @@ var mostCommonWord = function(paragraph, banned) {
     let answer = ""
     for(let word in words){
         if(banned.includes(word)) continue;
-        if(words[word] >result){
+        if(words[word] > result){
             result = words[word];
             answer = word
         };
