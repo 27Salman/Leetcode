@@ -4,24 +4,24 @@
  * @return {number}
  */
 var countCharacters = function(words, chars) {
-    let freqChars = chars.split("").reduce((acc, cur)=>{
-        acc[cur] = ( acc[cur] || 0 ) + 1;
-        return acc;
-    },{});
+    const count = new Int32Array(26);
+    const deduct = 'a'.charCodeAt(0);
+
+    for(let i = 0; i<chars.length; i++){
+        count[chars.charCodeAt(i) - deduct]++;
+    }
 
     let totalLength = 0;
 
-    for(let word of words){
-
-        let freqWord = word.split("").reduce((acc, cur)=>{
-            acc[cur] = ( acc[cur] || 0 ) + 1;
-            return acc;
-        },{});
-
+    for(const word of words){
+        const wordCount = new Int32Array(26);
         let flag = true;
 
-        for(let char in freqWord){
-            if(!freqChars[char] || freqChars[char] < freqWord[char]){
+        for(let i = 0; i<word.length; i++){
+            const num = word.charCodeAt(i) - deduct;
+            wordCount[num]++;
+
+            if(wordCount[num] > count[num]){
                 flag = false;
                 break;
             }
