@@ -8,10 +8,10 @@ var largestNumber = function(nums) {
     numStr.sort((a,b)=>{
         let num1 = a + b;
         let num2 = b + a;
-        return num2.localeCompare(num1) 
+        return num2 > num1 ? 1 : -1
     });
 
     if(numStr[0] === '0') return '0';
 
-    return numStr.join("")
+    return numStr.join("");
 };
