@@ -3,10 +3,22 @@
  * @return {number[]}
  */
 var sortArrayByParity = function(nums) {
-    let odd = [];
-    let even = [];
-    for(let i = 0; i<nums.length; i++){
-        nums[i]%2 === 0 ? even.push(nums[i]) : odd.push(nums[i]);
+    let left = 0;
+    let right = nums.length - 1;
+    
+    while (left < right) {
+        if (nums[left] % 2 !== 0 && nums[right] % 2 === 0) {
+            let temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+            left++;
+            right--;
+        }
+        
+        if (nums[left] % 2 === 0) left++;
+        
+        if (nums[right] % 2 !== 0) right--;
     }
-    return [...even,...odd]
+    
+    return nums;
 };
