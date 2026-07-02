@@ -3,5 +3,11 @@
  * @return {number[]}
  */
 var concatWithReverse = function(nums) {
-    return [...nums,...nums.reverse()]
+    let arr = [];
+    let i = nums.length-1
+    while(i>=0) {
+        arr.push(nums[i]);
+        i--;
+    }
+    return [...nums,...arr]
 };
