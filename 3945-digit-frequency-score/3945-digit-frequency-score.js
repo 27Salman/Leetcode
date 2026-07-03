@@ -3,7 +3,7 @@
  * @return {number}
  */
 var digitFrequencyScore = function(n) {
-    let m = n.toString().split("").map(a=>Number(a));
+    let m = n.toString();
     let freq = {};
     let sum = 0;
     for(let i = 0; i<m.length; i++){
