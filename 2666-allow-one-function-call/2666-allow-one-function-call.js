@@ -10,7 +10,9 @@ var once = function(fn) {
             result = fn(...args);
             isCalled = true;
             return result
-        } 
+        }else {
+            return undefined
+        }
     }
 };
 
