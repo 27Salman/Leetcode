@@ -3,16 +3,13 @@
  * @return {number}
  */
 var splitNum = function (n) {
-    // Convert to string
     let str = "" + n;
 
-    // Collect digits, convert to numbers, sort ascending
     let arr = str
         .split("")
         .map((x) => +x)
         .sort((a, b) => a - b);
 
-    // Concatenate into 2 strings, alternatively
     let str1 = "";
     let str2 = "";
 
@@ -26,6 +23,5 @@ var splitNum = function (n) {
         i++;
     }
 
-    // Convert 2 strings to numbers, add & return
     return +str1 + +str2;
 };
