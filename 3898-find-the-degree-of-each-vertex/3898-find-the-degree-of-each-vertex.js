@@ -5,7 +5,10 @@
 var findDegrees = function(matrix) {
     let arr = [];
     for(let i of matrix){
-        let max = [...i].reduce((acc,cur)=> cur + acc, 0);
-        arr.push(max)
+        let sum = 0;
+        for(let j = 0; j<i.length; j++){
+            sum += i[j];
+        }
+        arr.push(sum);
     }return arr
 };
