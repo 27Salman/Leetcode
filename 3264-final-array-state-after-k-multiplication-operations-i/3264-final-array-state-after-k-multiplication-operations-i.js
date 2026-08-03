@@ -5,15 +5,10 @@
  * @return {number[]}
  */
 var getFinalState = function(nums, k, multiplier) {
-    let n = 1;
-    while(n<=k){
-        let num = Math.min(...nums);
-        for(let i = 0; i <nums.length; i++){
-            if(num === nums[i]){
-                nums[i] = num*multiplier;
-                break;
-            }
-        }
-        n++;
-    }return nums; 
+    for(let i = 0; i<k; i++){
+        let min = Math.min(...nums);
+        let minIndex = nums.indexOf(min);
+        nums[minIndex] *= multiplier;
+    }
+    return nums; 
 };
