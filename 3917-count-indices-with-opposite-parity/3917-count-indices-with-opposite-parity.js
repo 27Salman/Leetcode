@@ -10,12 +10,12 @@ var countOppositeParity = function(nums) {
             for(let j = i+1; j<nums.length; j++){
                 if( nums[j]%2===0 ) count++;
             }
-            arr.push(count);
+            nums[i] = count;
         }else{
             for(let j = i+1; j<nums.length; j++){
                 if( nums[j]%2 !==0 ) count++;
             }
-            arr.push(count);
+            nums[i] = count;
         }
-    }return arr;
+    }return nums;
 };
