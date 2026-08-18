@@ -3,19 +3,19 @@
  * @return {number[]}
  */
 var countOppositeParity = function(nums) {
-    let arr = [];
-    for(let i = 0; i<nums.length; i++){
-        let count = 0;
-        if(nums[i]%2 !== 0){
-            for(let j = i+1; j<nums.length; j++){
-                if( nums[j]%2===0 ) count++;
-            }
-            nums[i] = count;
-        }else{
-            for(let j = i+1; j<nums.length; j++){
-                if( nums[j]%2 !==0 ) count++;
-            }
-            nums[i] = count;
+    const n = nums.length;
+    const result = new Array(n);
+    let oddCount = 0;
+    let evenCount = 0;
+    for (let i = n - 1; i >= 0; i--) {
+        if (nums[i] % 2 !== 0) {
+            result[i] = evenCount;
+            oddCount++;
+        } else {
+            result[i] = oddCount;
+            evenCount++;
         }
-    }return nums;
+    }
+
+    return result;
 };
