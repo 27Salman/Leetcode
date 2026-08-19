@@ -5,9 +5,19 @@
  */
 var countDigitOccurrences = function(nums, digit) {
     let count = 0;
-    let strDigit = String(digit);
-    let occur = nums.join("");
-    for(let i = 0; i<occur.length; i++){
-        if(occur[i]==strDigit) count++;
-    }return count;
+    for (let num of nums) {
+        if (num === 0 && digit === 0) {
+            count++;
+            continue;
+        }
+
+        while (num > 0) {
+            if (num % 10 === digit) {
+                count++;
+            }
+            num = Math.floor(num / 10);
+        }
+    }
+
+    return count;
 };
