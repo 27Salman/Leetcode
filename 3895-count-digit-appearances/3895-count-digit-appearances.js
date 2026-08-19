@@ -4,5 +4,9 @@
  * @return {number}
  */
 var countDigitOccurrences = function(nums, digit) {
-    return nums.join("").split("").filter( a => a == digit).length;
+    let count = 0;
+    let occur = nums.join("").split("")
+    for(let i = 0; i<occur.length; i++){
+        if(occur[i]==digit) count++;
+    }return count;
 };
