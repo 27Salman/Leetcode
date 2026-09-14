@@ -3,5 +3,8 @@
  * @return {string}
  */
 var trafficSignal = function(timer) {
-    return timer === 0 ? "Green" : timer === 30 ? "Orange" : timer > 30 && timer <= 90 ? "Red" : "Invalid"
+    if (timer === 0) return "Green";
+    if (timer === 30) return "Orange";
+    if (timer > 30 && timer <= 90) return "Red";
+    return "Invalid";
 };
