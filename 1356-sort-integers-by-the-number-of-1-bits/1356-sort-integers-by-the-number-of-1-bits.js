@@ -4,10 +4,18 @@
  */
 var sortByBits = function(arr) {
     
-    return arr.sort((a, b) => {
-        const bitsA = a.toString(2).split('1').length - 1;
-        const bitsB = b.toString(2).split('1').length - 1;
-        
-        return bitsA - bitsB || a - b;
-    });
+    const countBits = (n) => {
+        let count = 0;
+        while (n > 0) {
+            n &= (n - 1);
+            count++;
+        }
+        return count;
+    };
+
+    return arr.sort((a,b)=>{
+        let bitsA = countBits(a)
+        let bitsB = countBits(b)
+        return bitsA !== bitsB ? bitsA - bitsB : a-b;
+    })
 };
