@@ -6,6 +6,6 @@ var maximumValue = function(strs) {
     let max = 0;
     for(let str of strs){
         let val = /^\d+$/.test(str) ? Number(str) : str.length;    
-        max = Math.max(val,max)
+        if(val > max) max = val;
     }return max;
 };
